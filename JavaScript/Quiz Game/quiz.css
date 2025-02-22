@@ -1,0 +1,83 @@
+body{
+    background-color: #63b5f0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container{
+    display: flex;
+    position: relative;
+    margin-top: 100px;
+    height: 500px;
+    width: 700px;
+    background-color: white;
+    border-radius: 20px;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+.content{
+    padding: 50px;
+}
+
+.question{
+    font-size: 40px;
+}
+
+.choice{
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+.submit{
+    width: 100%;
+    height: 50px;
+    background-color: rgba(228, 228, 4, 0.873);
+    font-weight: bolder;
+    font-family:'Times New Roman', Times, serif;
+    font-size: 2rem;
+    border: transparent;
+    position: absolute;
+    bottom: 0;
+    cursor: pointer;
+}
+
+.result{
+    display: none;
+    padding: 50px;
+    text-align: center;
+}
+
+.correct{
+    text-align: center;
+    font-weight: normal;
+    font-size: 20px;
+    color: rgb(3, 163, 3);
+}
+
+.wrong{
+    text-align: center;
+    font-weight: normal;
+    font-size: 20px;
+    color: red;
+}
+
+.score{
+    text-align: center;
+    font-weight: normal;
+}
+
+.play{
+    width: 100%;
+    height: 50px;
+    background-color: rgba(228, 228, 4, 0.873);
+    font-weight: bolder;
+    font-family:'Times New Roman', Times, serif;
+    font-size: 2rem;
+    border: transparent;
+    position: absolute;
+    bottom: 0;
+    left: 0px;
+    cursor: pointer;
+}

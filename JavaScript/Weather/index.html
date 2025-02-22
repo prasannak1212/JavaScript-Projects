@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather</title>
+    <link rel="stylesheet" href="weather.css">
+    <script src="https://kit.fontawesome.com/b2563e0b18.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <div class="container">
+        <div class="search-field">
+            <input type="text" class="search" placeholder="Enter City Name">
+            <i class="search-icon fa-solid fa-2x fa-magnifying-glass"></i>
+        </div>
+
+        <div class="err">Invalid Location or City!</div>
+
+        <div class="weather">
+            <img src="image/Rain.png" class="weather-icon" alt="Weather Indication Icon">
+            <h1 class="temp">22&deg;C</h1>
+            <h2 class="city">Chennai</h2>
+        </div>
+
+        <div class="extra-info">
+            <div class="col">
+                <img src="image/humidity.png" alt="Humidity Icon">
+                <p class="humidity">30%</p>
+            </div>
+            <div class="col">
+                <img src="image/wind.png" alt="Wind Icon">
+                <p class="wind">15 Km/h</p>
+            </div>
+        </div>
+    </div>
+    <script src="weather.js" type="module"></script>
+</body>
+</html>
