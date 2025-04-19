@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Groove</title>
+    <link rel="icon" href="favicon.png">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://kit.fontawesome.com/b2563e0b18.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <header>
+        <h1 id="app-name"><i class="fa-solid fa-music"></i> Groove</h1>
+        <button id="toggle"></button>
+    </header>
+
+    <main class="container" id="container">
+        <div id="all-song">
+            <select name="song-filter" id="song-filter">
+                <option value="rock">Rock</option>
+                <option value="pop">Pop</option>
+                <option value="hiphop">Hiphop</option>
+            </select>
+            
+            <div id="song-list">
+
+            </div>
+        </div>
+
+        <div id="song-card">
+            <img id="song-image" src="#" alt="Song Image">
+            <h3 id="song-name"></h3>
+            <h6 id="song-author"></h6>
+        </div>
+
+        <div id="playlist">
+            <div id="current-playlist"></div>
+            <div id="all-playlist"></div>
+        </div>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
