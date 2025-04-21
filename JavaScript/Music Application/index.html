@@ -34,24 +34,26 @@
                 <option value="melody">Melody</option>
             </select>
             
-            <div id="song-list">
+            <div id="song-list"> 
                 <h3>All Songs</h3>
-                <ul id="songs">
-                    <li><div class="song">Gorila - Alex_MakeMusic</div></li>
-                    <li><div class="song">Experimental Cinematic Hip-Hop - Rockot</div></li>
-                    <li><div class="song">Don`t Talk - Cosmonkey</div></li>
-                    <li><div class="song">So Fresh - Cosmonkey</div></li>
-                    <li><div class="song">Gardens - Stylish Chill - penguinmusic</div></li>
-                    <li><div class="song">Kugelsicher by TremoxBeatz - TremoxBeatz</div></li>
-                </ul>
+                <div class='scroll' id="songs">
+                   <div class="song">Gorila - Alex_MakeMusic</div>
+                   <div class="song">Experimental Cinematic Hip-Hop - Rockot</div>
+                   <div class="song">Don`t Talk - Cosmonkey</div>
+                   <div class="song">So Fresh - Cosmonkey</div>
+                   <div class="song">Gardens - Stylish Chill - penguinmusic</div>
+                   <div class="song">Kugelsicher by TremoxBeatz - TremoxBeatz</div>
+                </div> 
             </div>
         </div>
 
         <div id="song-card">
             <div id="song-detail">
                 <img id="song-image" src="https://cdn.pixabay.com/audio/2025/03/19/20-23-35-428_200x200.png" alt="Song Image">
-                <h3 id="song-name">Gorila</h3>
-                <h4 id="song-author">Alex_MakeMusic</h4>
+                <div class="text">
+                    <h3 id="song-name">Gorila</h3>
+                    <h4 id="song-author">Alex_MakeMusic</h4>
+                </div>
             </div>
             <div id="controls">
                 <audio src="media\gorila-315977.mp3" controls></audio>
@@ -64,15 +66,15 @@
         </div>
 
         <div id="playlist-container">
-            <div id="playlist-input">
-                <input type="text" placeholder="Enter playlist name">
+            <div id="playlist-input-container">
+                <input id='playlist-input' type="text" placeholder="Enter playlist name">
                 <button id="create-playlist">Create Playlist</button>
             </div>
             <div id="playlist">
                 <div id="current-playlist">
                     <h3>Current Playlist</h3>
                 </div>
-                <div id="all-playlist">
+                <div class='scroll' id="all-playlist">
                     <h3>All Playlists</h3>
                 </div>
             </div>
