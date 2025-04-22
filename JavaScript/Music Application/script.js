@@ -51,19 +51,88 @@ const songList = [
     }
 ]   
 
+let body = document.querySelector('body');
 let toggleBtn = document.getElementById('toggle');
-let body = document.querySelector('body')
+let songListBlock = document.querySelector('#song-list');
+let songFilter = document.querySelector('#song-filter')
+let allSongsBlock = document.querySelector('#songs');
 
-toggleBtn.addEventListener('click', ()=>{
+toggleBtn.addEventListener('click', toggleTheme);
+
+
+showSongs();
+
+function toggleTheme() {
     toggleBtn.classList.toggle('dark');
     if(toggleBtn.classList.contains('dark')){
+        toggleBtn.dataTheme = 'dark';
         body.style.backgroundColor = '#2e2e2e';
         body.style.color = '#eaeaea';
     } else {
+        toggleBtn.dataTheme = 'light';
         body.style.backgroundColor = '#eaeaea';
         body.style.color = '#2e2e2e';
     }
-    
-})
+}
 
-// let toggleSlider = document.querySelector('#toggle::before')
+function showSongs(){
+    function createSongElement(songObj){
+        let songDiv = document.createElement('div');
+        songDiv.classList.add('song');
+        songDiv.textContent = `${songObj.name} - ${songObj.artist}`;
+        allSongsBlock.appendChild(songDiv);
+    }
+    for(let i of songList){
+        createSongElement(i);
+    }
+    songFilter.addEventListener('change', ()=>{
+        switch(songFilter.value.toLowerCase()){
+            case 'all':
+                allSongsBlock.textContent = '';
+                for(let i of songList){
+                    createSongElement(i);
+                }
+                break;
+
+            case 'rock':
+                allSongsBlock.textContent = '';
+                for(let i of songList){
+                    if(i.genre.toLowerCase() == 'rock'){
+                        createSongElement(i);
+                    }
+                }
+                break;
+
+            case 'pop':
+                allSongsBlock.textContent = '';
+                for(let i of songList){
+                    if(i.genre.toLowerCase() == 'pop'){
+                        createSongElement(i);
+                    }
+                }
+                break;
+
+            case 'hiphop':
+                allSongsBlock.textContent = '';
+                for(let i of songList){
+                    if(i.genre.toLowerCase() == 'hiphop'){
+                        createSongElement(i);
+                    }
+                }
+                break;
+            case 'melody':
+                allSongsBlock.textContent = '';
+                for(let i of songList){
+                    if(i.genre.toLowerCase() == 'melody'){
+                        createSongElement(i);
+                    }
+                }
+                break;
+            default:
+                allSongsBlock.textContent = '';
+                for(let i of songList){
+                    createSongElement(i);
+                }
+        }
+    })
+}
