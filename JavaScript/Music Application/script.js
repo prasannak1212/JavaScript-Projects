@@ -47,7 +47,7 @@ const songList = [
         artist: 'TremoxBeatz',
         img: 'https://cdn.pixabay.com/audio/2025/02/18/16-57-42-536_200x200.jpg',
         genre: 'pop',
-        source: 'media\kugelsicher-by-tremoxbeatz-302838.mp3'
+        source: 'media/kugelsicher-by-tremoxbeatz-302838.mp3'
     }
 ]   
 
@@ -56,9 +56,18 @@ let toggleBtn = document.getElementById('toggle');
 let songListBlock = document.querySelector('#song-list');
 let songFilter = document.querySelector('#song-filter')
 let allSongsBlock = document.querySelector('#songs');
+let songCard = document.querySelector('#song-card');
+let songDetail = document.querySelector('#song-detail');
+let songImage = document.querySelector('#song-image');
+let songName = document.querySelector('#song-name');
+let songAuthor = document.querySelector('#song-author');
+let songSource = document.querySelector('#song-source');
+let createPlaylistBtn = document.querySelector('#create-playlist');
+let playlistName = document.querySelector('#playlist-input');
+let allPlaylist = document.querySelector('#all-playlist');
 
 toggleBtn.addEventListener('click', toggleTheme);
-
+createPlaylistBtn.addEventListener('click', createPlaylist);
 
 showSongs();
 
@@ -81,6 +90,10 @@ function showSongs(){
         songDiv.classList.add('song');
         songDiv.textContent = `${songObj.name} - ${songObj.artist}`;
         allSongsBlock.appendChild(songDiv);
+
+        songDiv.addEventListener('click', ()=>{
+            renderCurrentSong(songObj);
+        })
     }
     for(let i of songList){
         createSongElement(i);
@@ -135,4 +148,28 @@ function showSongs(){
                 }
         }
     })
+}
+
+function renderCurrentSong(songObj) {
+    songImage.src = songObj.img;
+    songName.textContent = songObj.name;
+    songAuthor.textContent = songObj.artist;
+    songSource.src = songObj.source;
+}
+
+function createPlaylist() {
+    let playList = document.createElement('div');
+    playList.classList.add('playlist-block');
+    playList.classList.add(playlistName.value);
+
+    let playlistText = document.createElement('p');
+    playlistText.classList.add('playlist-text');
+    playlistText.textContent = playlistName.value;
+
+    playList.appendChild(playlistText);
+    allPlaylist.appendChild(playList);
+
+    if(String(playlistName.value).length >= 30){
+        playlistText.classList.add('playlist-long-text');
+    }
 }
